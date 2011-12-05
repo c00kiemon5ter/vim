@@ -310,13 +310,8 @@ syntax on
 "set synmaxcol=80
 set synmaxcol=160
 set popt+=syntax:y
-
-if (&term =~ 'linux')
-    set nocursorline
-    set t_Co=16
-else
-    set t_Co=256
-endif
+set nocursorline
+set t_Co=16
 colorscheme mirocookies
 
 " vim: nofoldenable
