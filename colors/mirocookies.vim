@@ -15,7 +15,7 @@ endif
 
 let g:color_name="mirocookies"
 " Normal colors  ---
-hi Normal          ctermfg=15
+hi Normal          ctermfg=White
 hi Ignore          ctermfg=8
 hi Comment         ctermfg=DarkCyan
 hi LineNr          ctermfg=8
@@ -33,9 +33,9 @@ hi String          ctermfg=Green
 hi Constant        ctermfg=Cyan
 hi Special         ctermfg=DarkGreen
 hi SpecialChar     ctermfg=DarkRed
-hi Number          ctermfg=14
+hi Number          ctermfg=Cyan
 hi Identifier      ctermfg=Cyan
-hi Conditional     ctermfg=14
+hi Conditional     ctermfg=Magenta
 hi Repeat          ctermfg=DarkRed
 hi Statement       ctermfg=Blue
 hi Label           ctermfg=Cyan
@@ -58,23 +58,21 @@ hi ModeMsg         ctermfg=Cyan
 hi Debug           ctermfg=Red
 hi MatchParen      ctermfg=8            ctermbg=White
 hi ErrorMsg        ctermfg=White        ctermbg=Red
-hi WildMenu        ctermfg=Magenta      ctermbg=15
-hi Folded          cterm=reverse        ctermfg=DarkCyan    ctermbg=Black
-"hi Search          ctermfg=White        ctermbg=Cyan
-hi Search          ctermfg=Black        ctermbg=Yellow
+hi WildMenu        ctermfg=Magenta      ctermbg=White
+hi Folded          ctermfg=DarkCyan     ctermbg=Black       cterm=reverse
+hi Search          ctermfg=Black        ctermbg=DarkYellow
 hi IncSearch       ctermfg=Red          ctermbg=White
 hi WarningMsg      ctermfg=White        ctermbg=Red
-hi Question        ctermfg=DarkGreen    ctermbg=15
+hi Question        ctermfg=DarkGreen    ctermbg=White
 hi Pmenu           ctermfg=Green        ctermbg=DarkCyan
 hi PmenuSel        ctermfg=Red          ctermbg=Cyan
-"hi Visual          ctermfg=DarkGrey     ctermbg=15
 hi Visual          ctermfg=White        ctermbg=DarkRed
 hi StatusLine      ctermfg=Black        ctermbg=White
 hi StatusLineNC    ctermfg=8            ctermbg=Black
 
 " Specific for Vim script  ---
 hi vimCommentTitle ctermfg=DarkGreen
-hi vimFold         ctermfg=Black    ctermbg=15
+hi vimFold         ctermfg=Black    ctermbg=White
 
 " Specific for help files  ---
 hi helpHyperTextJump ctermfg=DarkYellow
