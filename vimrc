@@ -162,9 +162,36 @@ iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
 cmap w!! %!sudo tee > /dev/null %
 
 " Enable filetype detection
-filetype on
+filetype off "required by vundle
 filetype plugin on
 filetype indent on
+
+""""""""""
+" Vundle "
+""""""""""
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" etc ...
+filetype plugin indent on
+" -- Brief help for reference
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 """"""""""""""""
 " Autocommands "
