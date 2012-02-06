@@ -255,6 +255,13 @@ autocmd VimEnter * nohlsearch
 " autocomplete python functions for python file types
 autocmd FileType python set completefunc=pythoncomplete#Complete
 
+" mutt mails have a maximum text width
+autocmd BufRead ~/.article*,/tmp/mutt* set tw=72
+" Clear empty lines and turn into space to write in
+autocmd BufRead ~/.article*,/tmp/mutt* :normal ,cqel
+" Remove blocks of empty lines
+autocmd BufRead ~/.article*,/tmp/mutt* :normal ,dl
+
 """""""""""""""
 " Keymappings "
 """""""""""""""
