@@ -134,14 +134,6 @@ set backupdir=~/.backups/
 " Use css for generated html files
 let html_use_css=1
 
-" Set taglist plugin options
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Compact_Format = 1
-let Tlist_File_Fold_Auto_Close = 0
-let Tlist_Inc_Winwidth = 1
-
 " yanking history settings
 let g:yankring_enabled = 1
 let g:yankring_share_between_instances = 1
@@ -176,16 +168,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
+Bundle 'Tagbar'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
-" etc ...
 filetype plugin indent on
 " -- Brief help for reference
 " :BundleList          - list configured bundles
@@ -319,8 +310,8 @@ nnoremap <C-N> :bn<CR>
 nnoremap <C-I> :bn<CR>
 nnoremap <C-P> :bp<CR>
 
-" Toggle taglist script
-map <F8> :Tlist<CR>
+" Toggle tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Toggle line numbers
 map <F9> :set number!<CR>
