@@ -338,6 +338,6 @@ set synmaxcol=160
 set popt+=syntax:y
 set nocursorline
 set t_Co=16
-colorscheme mirocookies
+colorscheme c00kiez
 
 " vim: nofoldenable
