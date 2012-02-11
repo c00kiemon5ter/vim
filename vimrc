@@ -169,12 +169,8 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
 Bundle 'Tagbar'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 filetype plugin indent on
@@ -292,7 +288,7 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 
 " Easy pasting from the X clipboard
-imap <C-I> <ESC>:r!xclip -sel clipboard -o<CR>i
+"imap <C-I> <ESC>:r!xclip -sel clipboard -o<CR>i
 
 " Easy help
 map! <F1> <C-C><F1>
@@ -313,9 +309,9 @@ nnoremap <F4> <C-W>w
 map <C-Tab> :tabNext<cr>
 
 " Swap around between buffers
-nnoremap <C-N> :bn<CR>
-nnoremap <C-I> :bn<CR>
-nnoremap <C-P> :bp<CR>
+"nnoremap <C-N> :bn<CR>
+"nnoremap <C-I> :bn<CR>
+"nnoremap <C-P> :bp<CR>
 
 " Toggle tagbar
 nmap <F8> :TagbarToggle<CR>
