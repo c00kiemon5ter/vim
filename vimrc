@@ -326,6 +326,9 @@ map <F11> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 " Leave insert mode without reaching for the esc key
 imap jj <ESC>
 
+" toggle cursor line highlight
+":nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme selection and syntax hilighting "
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -333,7 +336,7 @@ syntax on
 "set synmaxcol=80
 set synmaxcol=160
 set popt+=syntax:y
-set nocursorline
+set cursorline
 set t_Co=16
 colorscheme c00kiez
 

@@ -67,6 +67,10 @@ hi Visual          ctermfg=White        ctermbg=DarkRed
 hi StatusLine      ctermfg=Black        ctermbg=White
 hi StatusLineNC    ctermfg=Black        ctermbg=Black       cterm=bold
 
+" highlight cursor line and column -- dark bg and bold fg
+hi CursorLine   cterm=NONE ctermbg=Black ctermfg=none cterm=bold
+hi CursorColumn cterm=NONE ctermbg=Black ctermfg=none
+
 " Specific for Vim script  ---
 hi vimCommentTitle ctermfg=DarkGreen
 hi vimFold         ctermfg=Black    ctermbg=White
