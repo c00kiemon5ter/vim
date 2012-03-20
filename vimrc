@@ -169,6 +169,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'othree/html5.vim'
 " vim-scripts repos
 Bundle 'Tagbar'
 " non github repos
