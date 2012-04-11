@@ -49,7 +49,7 @@ hi Tag             ctermfg=DarkYellow
 hi Delimiter       ctermfg=DarkBlue
 hi SpecialComment  ctermfg=DarkRed
 hi Boolean         ctermfg=DarkYellow                       cterm=bold
-hi Todo            ctermfg=Black
+hi Todo            ctermfg=Black                            cterm=bold
 hi MoreMsg         ctermfg=DarkCyan                         cterm=bold
 hi ModeMsg         ctermfg=DarkCyan
 hi Debug           ctermfg=DarkRed                          cterm=bold
