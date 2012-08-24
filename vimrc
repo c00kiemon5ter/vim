@@ -170,6 +170,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'othree/html5.vim'
+Bundle 'Rip-Rip/clang_complete'
 " vim-scripts repos
 Bundle 'Tagbar'
 " non github repos
