@@ -171,6 +171,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'othree/html5.vim'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'tomtom/quickfixsigns_vim'
 " vim-scripts repos
 Bundle 'Tagbar'
 " non github repos
@@ -297,7 +298,6 @@ map! <F1> <C-C><F1>
 vmap <F1> <C-C><F1>
 omap <F1> <C-C><F1>
 nnoremap <F1> :help<Space>
-map <F7> :!python -c 'help()'<left><left>
 
 " Show nonprinting characters
 map <F2> :set list!<CR>
@@ -314,6 +314,9 @@ map <C-Tab> :tabNext<cr>
 "nnoremap <C-N> :bn<CR>
 "nnoremap <C-I> :bn<CR>
 "nnoremap <C-P> :bp<CR>
+
+" Quickfixsigns tagbar
+nmap <F7> :QuickfixsignsToggle<CR>
 
 " Toggle tagbar
 nmap <F8> :TagbarToggle<CR>
