@@ -289,6 +289,8 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
+set completeopt=menu,menuone,longest
+set pumheight=15
 
 " Easy pasting from the X clipboard
 "imap <C-I> <ESC>:r!xclip -sel clipboard -o<CR>i
