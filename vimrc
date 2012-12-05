@@ -1,6 +1,30 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License
 " stole some cookies from meqif and rezza
 
+""""""""""
+" Vundle "
+""""""""""
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+" -- original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'othree/html5.vim'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'tomtom/quickfixsigns_vim'
+Bundle 'zeis/kolor'
+" -- vim-scripts repos
+Bundle 'Tagbar'
+Bundle 'Solarized'
+" -- non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+"
+" Enable filetype detection
+filetype plugin indent on
+
 """""""""""""
 " Functions "
 """""""""""""
@@ -62,7 +86,6 @@ set novisualbell
 set noerrorbells
 
 " Basic options
-set nocompatible
 set history=50
 set viminfo='1000,f1,:1000,/1000
 set shortmess+=aI
@@ -141,36 +164,6 @@ iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
 
 " Allows writing to files with root privileges
 cmap w!! %!sudo tee > /dev/null %
-
-" Enable filetype detection
-filetype off "required by vundle
-filetype plugin on
-filetype indent on
-
-""""""""""
-" Vundle "
-""""""""""
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'othree/html5.vim'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'tomtom/quickfixsigns_vim'
-" vim-scripts repos
-Bundle 'Tagbar'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-filetype plugin indent on
-" -- Brief help for reference
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 """"""""""""""""
 " Autocommands "
