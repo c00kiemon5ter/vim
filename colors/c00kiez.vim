@@ -53,7 +53,7 @@ hi Todo            ctermfg=Black                            cterm=bold
 hi MoreMsg         ctermfg=DarkCyan                         cterm=bold
 hi ModeMsg         ctermfg=DarkCyan
 hi Debug           ctermfg=DarkRed                          cterm=bold
-hi MatchParen      ctermfg=Black        ctermbg=White       cterm=bold
+hi MatchParen      ctermfg=White        ctermbg=DarkCyan    cterm=bold
 hi ErrorMsg        ctermfg=White        ctermbg=DarkRed
 hi WildMenu        ctermfg=DarkMagenta  ctermbg=White       cterm=bold
 hi Folded          ctermfg=DarkCyan     ctermbg=Black       cterm=reverse
