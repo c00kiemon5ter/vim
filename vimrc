@@ -140,9 +140,9 @@ autocmd BufRead ~/.article*,/tmp/mutt* :normal ,dl
 """"""""""""
 
 " show invisible chars
-"set listchars=eol:¬,tab:»\ ,trail:·,extends:>,precedes:<
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
-set nolist
+set listchars=tab:¬\ ,trail:•,extends:>,precedes:<
+"set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
+set list
 
 " Always show the statusline
 set laststatus=2
