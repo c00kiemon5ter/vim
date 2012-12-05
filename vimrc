@@ -190,8 +190,8 @@ set expandtab
 set shiftround
 set autoindent
 set smartindent
-"set textwidth=80
-set textwidth=160
+set textwidth=140
+set synmaxcol=140
 set nowrap
 set formatoptions+=nl
 set whichwrap=h,l,~,<,>,[,]
@@ -201,6 +201,7 @@ set backspace=eol,start,indent
 set scrolloff=2
 
 " show line numbers
+set numberwidth=1
 set number
 
 " Search options
@@ -296,6 +297,7 @@ map <C-Tab> :tabNext<cr>
 
 " Quickfixsigns tagbar
 nmap <F7> :QuickfixsignsToggle<CR>
+let g:quickfixsigns_classes=['qfl', 'vcsdiff', 'breakpoints']
 
 " Toggle tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -316,10 +318,9 @@ imap jj <ESC>
 " colorscheme selection and syntax hilighting "
 """""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-"set synmaxcol=80
-set synmaxcol=160
 set popt+=syntax:y
 set cursorline
+
 set t_Co=16
 colorscheme c00kiez
 
