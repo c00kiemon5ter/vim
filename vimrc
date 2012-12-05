@@ -295,11 +295,14 @@ map <C-Tab> :tabNext<cr>
 nmap <F7> :QuickfixsignsToggle<CR>
 let g:quickfixsigns_classes=['qfl', 'vcsdiff', 'breakpoints']
 
-" Toggle tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " Toggle line numbers
-map <F9> :set number!<CR>
+map <F8> :set number!<CR>
+
+" Toggle tagbar
+nmap <F9> :TagbarToggle<CR>
+
+" Toggle paste mode while in insert mode with F10
+set pastetoggle=<F10>
 
 " Toggle dark/light default colour theme for shitty terms
 map <F11> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
