@@ -129,24 +129,13 @@ set comments+=n::
 " Keep backup of edited files
 set backup
 set writebackup
-set backupdir=~/.backups/
-
-" Use css for generated html files
-let html_use_css=1
-
-" yanking history settings
-let g:yankring_enabled = 1
-let g:yankring_share_between_instances = 1
-let g:yankring_ignore_duplicate = 1
-let g:yankring_max_history = 100
-let g:yankring_history_dir = "/tmp"
-let g:yankring_history_file = ".yankring_history"
+set backupdir=~/.vim/backups/
 
 " Gist
 let g:gist_clip_command = 'xclip'
 let g:gist_detect_filetype = 1
 
-" Basic abbreviations
+" Basic abbreviations - needs work
 abbreviate teh the
 iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
 
