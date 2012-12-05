@@ -215,8 +215,7 @@ set dictionary=/usr/share/dict/words
 " Show full tags when doing search completion
 set showfulltag
 
-" Set bracket matching and comment formats
-set matchpairs+=<:>
+" Set comment formats
 set comments-=s1:/*,mb:*,ex:*/
 set comments+=s:/*,mb:**,ex:*/
 set comments+=fb:*
@@ -250,17 +249,17 @@ cmap w!! %!sudo tee > /dev/null %
 ":inoremap " ""<ESC>i
 ":inoremap ' ''<ESC>i
 
-" hardcore mode
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
+" hardcore mode aka no arrows ~ roflol
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
 inoremap <right> <nop>
 
-" Omni-completion with Ctrl-Space
+" Omni-completion with Ctrl-Space - hell yeah
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\<lt>C-n>" :
 \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
@@ -269,9 +268,6 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 set completeopt=menu,menuone,longest
 set pumheight=15
-
-" Easy pasting from the X clipboard
-"imap <C-I> <ESC>:r!xclip -sel clipboard -o<CR>i
 
 " Easy help
 map! <F1> <C-C><F1>
@@ -310,9 +306,6 @@ map <F11> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 
 " Leave insert mode without reaching for the esc key
 imap jj <ESC>
-
-" toggle cursor line highlight
-":nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme selection and syntax hilighting "
