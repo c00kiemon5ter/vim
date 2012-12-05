@@ -55,6 +55,86 @@ fun! FixInvisiblePunctuation()
     retab
 endfun
 
+""""""""""""""""
+" Autocommands "
+""""""""""""""""
+
+" Clear previous autocmds, stops a few errors creeping in.
+" all commands should be under this
+autocmd!
+
+" When editing a file, always jump to the last known cursor
+" position. Don't do it when the position is invalid or when
+" inside an event handler (happens when dropping a file on gvim).
+" Also don't do it when the mark is in the first line, that is
+" the default position when opening a file.
+autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+"Clean trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Set comment characters for common languages
+autocmd FileType python,sh,bash,zsh,ruby,perl let StartComment="#" | let EndComment=""
+autocmd FileType html let StartComment="<!--" | let EndComment="-->"
+autocmd FileType php,c,javascript let StartComment="//" | let EndComment=""
+autocmd FileType cpp,java let StartComment="/*" | let EndComment="*/"
+autocmd FileType vim let StartComment="\"" | let EndComment=""
+
+" C file specific options
+autocmd FileType c,cpp set cindent
+autocmd FileType c,cpp set formatoptions+=ro
+
+" Abbreviations
+autocmd FileType c,cpp :ab #d #define
+autocmd FileType c,cpp :ab #i #include
+
+" Compile and run keymappings
+autocmd FileType c,cpp map <F5> :!./%:r<CR>
+autocmd FileType sh,php,perl,python map <F5> :!./%<CR>
+autocmd FileType c,cpp map <F6> :make %:r<CR>
+autocmd FileType php map <F6> :!php &<CR>
+autocmd FileType python map <F6> :!python %<CR>
+autocmd FileType perl map <F6> :!perl %<CR>
+autocmd FileType html,xhtml map <F5> :!chromium%<CR>
+autocmd FileType java map <F6> :!javac %<CR>
+autocmd FileType tex map <F5> :!evince "%:r".pdf<CR>
+autocmd FileType tex map <F6> :!pdflatex %<CR>
+
+" MS Word document reading
+autocmd BufReadPre *.doc set ro
+autocmd BufReadPost *.doc %!antiword "%"
+" alternatively
+"autocmd BufReadPost *.doc %!catdoc "%"
+"autocmd BufReadPost *.doc %!odt2txt "%"
+
+" Arduino stuff
+autocmd BufReadPre *.pde set filetype=c
+
+" nasm
+autocmd BufReadPre *.nasm set filetype=asm
+
+" SVG
+autocmd BufReadPre *.svg set filetype=svg
+
+" Ragel
+autocmd BufRead,BufNewFile *.rl set filetype=ragel
+
+" turn off any existing search on exit
+autocmd VimEnter * nohlsearch
+
+" autocomplete python functions for python file types
+autocmd FileType python set completefunc=pythoncomplete#Complete
+
+" mutt mails have a maximum text width
+autocmd BufRead ~/.article*,/tmp/mutt* set tw=72
+" Clear empty lines and turn into space to write in
+autocmd BufRead ~/.article*,/tmp/mutt* :normal ,cqel
+" Remove blocks of empty lines
+autocmd BufRead ~/.article*,/tmp/mutt* :normal ,dl
+
 """"""""""""
 " Settings "
 """"""""""""
@@ -157,84 +237,6 @@ iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
 
 " Allows writing to files with root privileges
 cmap w!! %!sudo tee > /dev/null %
-
-""""""""""""""""
-" Autocommands "
-""""""""""""""""
-
-" Clear previous autocmds, stops a few errors creeping in.
-autocmd!
-
-" When editing a file, always jump to the last known cursor
-" position. Don't do it when the position is invalid or when
-" inside an event handler (happens when dropping a file on gvim).
-" Also don't do it when the mark is in the first line, that is
-" the default position when opening a file.
-autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-"Clean trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Set comment characters for common languages
-autocmd FileType python,sh,bash,zsh,ruby,perl let StartComment="#" | let EndComment=""
-autocmd FileType html let StartComment="<!--" | let EndComment="-->"
-autocmd FileType php,c,javascript let StartComment="//" | let EndComment=""
-autocmd FileType cpp,java let StartComment="/*" | let EndComment="*/"
-autocmd FileType vim let StartComment="\"" | let EndComment=""
-
-" C file specific options
-autocmd FileType c,cpp set cindent
-autocmd FileType c,cpp set formatoptions+=ro
-"autocmd FileType c,cpp set makeprg=gcc\ -Wall\ -O2\ -o\ %<\ %
-
-" HTML abbreviations
-autocmd FileType html,php imap bbb <br />
-
-" Compile and run keymappings
-autocmd FileType c,cpp map <F5> :!./%:r<CR>
-autocmd FileType c,cpp :ab #d #define
-autocmd FileType c,cpp :ab #i #include
-autocmd FileType sh,php,perl,python map <F5> :!./%<CR>
-autocmd FileType c,cpp map <F6> :make %:r<CR>
-autocmd FileType php map <F6> :!php &<CR>
-autocmd FileType python map <F6> :!python %<CR>
-autocmd FileType perl map <F6> :!perl %<CR>
-autocmd FileType html,xhtml map <F5> :!chromium%<CR>
-autocmd FileType java map <F6> :!javac %<CR>
-autocmd FileType tex map <F5> :!evince "%:r".pdf<CR>
-autocmd FileType tex map <F6> :!pdflatex %<CR>
-
-" MS Word document reading
-autocmd BufReadPre *.doc set ro
-autocmd BufReadPost *.doc %!antiword "%"
-
-" Arduino stuff
-autocmd BufReadPre *.pde set filetype=c
-
-" nasm
-autocmd BufReadPre *.nasm set filetype=asm
-
-" SVG
-autocmd BufReadPre *.svg set filetype=svg
-
-" Ragel
-autocmd BufRead,BufNewFile *.rl set filetype=ragel
-
-" turn off any existing search on exit
-autocmd VimEnter * nohlsearch
-
-" autocomplete python functions for python file types
-autocmd FileType python set completefunc=pythoncomplete#Complete
-
-" mutt mails have a maximum text width
-autocmd BufRead ~/.article*,/tmp/mutt* set tw=72
-" Clear empty lines and turn into space to write in
-autocmd BufRead ~/.article*,/tmp/mutt* :normal ,cqel
-" Remove blocks of empty lines
-autocmd BufRead ~/.article*,/tmp/mutt* :normal ,dl
 
 """""""""""""""
 " Keymappings "
