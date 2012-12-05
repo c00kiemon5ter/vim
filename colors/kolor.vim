@@ -1,0 +1,1 @@
+../bundle/kolor/colors/kolor.vim
