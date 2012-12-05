@@ -29,21 +29,15 @@ filetype plugin indent on
 " Functions "
 """""""""""""
 
-" Add timestamp to rc files
-fun! <SID>UpdateRcHeader()
-    let l:c=col(".")
-    let l:l=line(".")
-    1,10s-\(Most recent update:\).*-\="Most recent update: ".strftime("%c")-
-    call cursor(l:l, l:c)
-endfun
-
-" Set up the status line
-fun! <SID>SetStatusLine()
-    let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
-    let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
-    let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
-    execute "set statusline=" . l:s1 . l:s2 . l:s3
-endfun
+" " Set up the status line
+" fun! <SID>SetStatusLine()
+"     let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
+"     let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
+"     let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
+"     execute "set statusline=" . l:s1 . l:s2 . l:s3
+" endfun
+" " and use it
+" call <SID>SetStatusLine()
 
 " Copy/Paste from Word*doc files is a mess
 fun! FixInvisiblePunctuation()
@@ -70,9 +64,8 @@ endfun
 set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 set nolist
 
-" Setup a funky statusline
+" Always show the statusline
 set laststatus=2
-call <SID>SetStatusLine()
 
 " Encoding
 set termencoding=utf-8
