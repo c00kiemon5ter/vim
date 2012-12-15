@@ -79,6 +79,12 @@ hi vimFold         ctermfg=Black    ctermbg=White
 " Specific for help files  ---
 hi helpHyperTextJump ctermfg=DarkYellow
 
+" Specific for vimdiff  ---
+hi DiffAdd        ctermbg=DarkBlue     ctermfg=White
+hi DiffDelete     ctermbg=DarkMagenta  ctermfg=White
+hi DiffChange     ctermbg=DarkCyan     ctermfg=White
+hi DiffText       ctermbg=DarkRed      ctermfg=White
+
 " JS numbers only ---
 hi javaScriptNumber ctermfg=DarkYellow
 
@@ -96,15 +102,6 @@ hi perlVarPlain2  ctermfg=DarkYellow
 
 " Specific for Ruby  ---
 hi rubySharpBang  ctermfg=DarkGreen  term=standout
-
-" Specific for diff  ---
-hi diffLine       ctermfg=DarkGreen
-hi diffOldLine    ctermfg=DarkGreen  cterm=bold
-hi diffOldFile    ctermfg=DarkGreen  cterm=bold
-hi diffNewFile    ctermfg=DarkGreen  cterm=bold
-hi diffAdded      ctermfg=DarkBlue   cterm=bold
-hi diffRemoved    ctermfg=DarkRed    cterm=bold
-hi diffChanged    ctermfg=DarkCyan
 
 " Spell checking  ---
 if version >= 700
