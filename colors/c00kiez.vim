@@ -49,7 +49,7 @@ hi Tag             ctermfg=DarkYellow
 hi Delimiter       ctermfg=DarkBlue
 hi SpecialComment  ctermfg=DarkRed
 hi Boolean         ctermfg=DarkYellow                       cterm=bold
-hi Todo            ctermfg=Black                            cterm=bold
+hi Todo            ctermfg=White        ctermbg=DarkYellow  cterm=bold
 hi MoreMsg         ctermfg=DarkCyan                         cterm=bold
 hi ModeMsg         ctermfg=DarkCyan
 hi Debug           ctermfg=DarkRed                          cterm=bold
@@ -70,7 +70,7 @@ hi StatusLineNC    ctermfg=Black        ctermbg=Black       cterm=bold
 " highlight cursor line and column -- dark bg and bold fg
 hi CursorLine   cterm=NONE ctermbg=Black ctermfg=none
 hi CursorColumn cterm=NONE ctermbg=Black ctermfg=none
-hi CursorLineNr cterm=NONE ctermbg=none ctermfg=DarkYellow
+hi CursorLineNr cterm=NONE ctermbg=none  ctermfg=DarkYellow
 
 " Specific for Vim script  ---
 hi vimCommentTitle ctermfg=DarkGreen
@@ -80,10 +80,10 @@ hi vimFold         ctermfg=Black    ctermbg=White
 hi helpHyperTextJump ctermfg=DarkYellow
 
 " Specific for vimdiff  ---
-hi DiffAdd        ctermbg=DarkBlue     ctermfg=White
-hi DiffDelete     ctermbg=DarkMagenta  ctermfg=White
-hi DiffChange     ctermbg=DarkCyan     ctermfg=White
-hi DiffText       ctermbg=DarkRed      ctermfg=White
+hi DiffAdd        ctermfg=White   ctermbg=DarkBlue
+hi DiffDelete     ctermfg=White   ctermbg=DarkRed
+hi DiffChange     ctermfg=White   ctermbg=DarkMagenta
+hi DiffText       ctermfg=White   ctermbg=DarkYellow
 
 " JS numbers only ---
 hi javaScriptNumber ctermfg=DarkYellow
