@@ -17,7 +17,7 @@ hi Ignore          ctermfg=Black                            cterm=bold
 hi Comment         ctermfg=Black                            cterm=bold
 hi LineNr          ctermfg=Black                            cterm=bold
 hi Float           ctermfg=DarkYellow                       cterm=bold
-hi Include         ctermfg=DarkMagenta                      cterm=bold
+hi Include         ctermfg=DarkMagenta
 hi Define          ctermfg=DarkGreen                        cterm=bold
 hi Macro           ctermfg=DarkCyan                         cterm=bold
 hi PreProc         ctermfg=DarkGreen
@@ -39,7 +39,7 @@ hi Label           ctermfg=DarkYellow
 hi Operator        ctermfg=DarkYellow                       cterm=bold
 hi Keyword         ctermfg=DarkRed
 hi StorageClass    ctermfg=DarkYellow
-hi Structure       ctermfg=DarkMagenta                      cterm=bold
+hi Structure       ctermfg=DarkMagenta
 hi Typedef         ctermfg=DarkCyan
 hi Function        ctermfg=DarkYellow
 hi Exception       ctermfg=DarkRed                          cterm=bold
@@ -49,7 +49,7 @@ hi Tag             ctermfg=DarkYellow
 hi Delimiter       ctermfg=DarkBlue
 hi SpecialComment  ctermfg=DarkRed
 hi Boolean         ctermfg=DarkYellow                       cterm=bold
-hi Todo            ctermfg=White        ctermbg=DarkYellow  cterm=bold
+hi Todo            ctermbg=Black        ctermfg=DarkYellow  cterm=reverse,bold
 hi MoreMsg         ctermfg=DarkCyan                         cterm=bold
 hi ModeMsg         ctermfg=DarkCyan
 hi Debug           ctermfg=DarkRed                          cterm=bold
