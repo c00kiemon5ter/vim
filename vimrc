@@ -15,7 +15,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'othree/html5.vim'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'tomtom/quickfixsigns_vim'
-Bundle 'zeis/kolor'
+Bundle 'zeis/vim-kolor'
 " -- vim-scripts repos
 Bundle 'Tagbar'
 Bundle 'Solarized'
