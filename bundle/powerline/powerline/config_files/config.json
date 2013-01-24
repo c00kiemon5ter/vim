@@ -1,0 +1,32 @@
+{
+	"common": {
+		"term_24bit_colors": false,
+		"dividers": {
+			"left": {
+				"hard": "",
+				"soft": "└┐"
+			},
+			"right": {
+				"hard": "",
+				"soft": "└┐"
+			}
+		}
+	},
+	"ext": {
+		"shell": {
+			"colorscheme": "default",
+			"theme": "default"
+		},
+		"tmux": {
+			"colorscheme": "default",
+			"theme": "default"
+		},
+		"vim": {
+			"colorscheme": "default",
+			"theme": "ascii",
+			"local_themes": {
+				"help": "ascii.help"
+			}
+		}
+	}
+}
