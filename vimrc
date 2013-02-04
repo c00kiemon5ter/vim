@@ -221,6 +221,9 @@ nnoremap <CR> :noh<CR>/<BS>
 " Allows writing to files with root privileges
 cmap w!! %!sudo tee > /dev/null %
 
+" :W is :w ffs!
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
 " no arrows!
 nnoremap <up>    <nop>
 nnoremap <down>  <nop>
