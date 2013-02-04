@@ -24,7 +24,7 @@ hi PreProc         ctermfg=DarkGreen
 hi PreCondit       ctermfg=DarkCyan                         cterm=bold
 hi NonText         ctermfg=DarkCyan
 hi Directory       ctermfg=DarkCyan
-hi SpecialKey      ctermfg=DarkYellow
+hi SpecialKey      ctermfg=Black
 hi Type            ctermfg=DarkGreen
 hi String          ctermfg=DarkGreen                        cterm=bold
 hi Constant        ctermfg=DarkCyan                         cterm=bold
