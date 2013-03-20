@@ -30,7 +30,7 @@ set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
-set showmode                    "Show current mode down the bottom
+set noshowmode                  "Don't show current mode down the bottom
 set novisualbell                "No sounds, no visuals
 set noerrorbells                "Do not bell on on errors
 set autoread                    "Reload files changed outside vim
@@ -66,9 +66,10 @@ set softtabstop=4
 set tabstop=4
 set noexpandtab
 
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
-set textwidth=140
+set textwidth=100       "Maximum width of inserted text
+set nowrap              "Don't wrap lines
+set linebreak           "Wrap lines at convenient points
+let &showbreak = '+++ ' "Wrapped lines are marked with
 
 "set list listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 set list listchars=tab:¬\ ,trail:•,extends:>,precedes:<
