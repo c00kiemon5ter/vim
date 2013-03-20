@@ -47,6 +47,12 @@ set t_Co=16
 set cursorline
 colorscheme c00kiez
 
+" draw foreground or background after 120 chars
+let &colorcolumn = join(range(121,350),",")
+"hi OverLength cterm=none ctermbg=Black ctermfg=none
+"match OverLength /\%121v.\+/
+"match ErrorMsg '\%>120v.\+'
+
 " =============== Search Configuration ==================
 
 set incsearch        "Find the next match as we type the search
