@@ -42,10 +42,10 @@ set modeline
 
 syntax on
 set synmaxcol=140
+set cursorline
 
 set t_Co=16
-set cursorline
-colorscheme c00kiez
+colorscheme solarcookies
 
 " draw foreground or background after 120 chars
 let &colorcolumn = join(range(121,350),",")
