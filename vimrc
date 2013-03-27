@@ -11,16 +11,28 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'othree/html5.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'tomtom/quickfixsigns_vim'
-Bundle 'zeis/vim-kolor'
+Bundle 'mhinz/vim-signify'
+Bundle 'mhinz/vim-blockify'
+Bundle 'othree/html5.vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
-Bundle 'Tagbar'
-Bundle 'Solarized'
-"Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'zeis/vim-kolor'
+
+let g:signify_sign_add                  = '+'
+let g:signify_sign_change               = '!'
+let g:signify_sign_delete               = '_'
+let g:signify_sign_delete_first_line    = '‾'
+let g:signify_sign_color_ctermfg_add    = 6
+let g:signify_sign_color_ctermfg_change = 1
+let g:signify_sign_color_ctermfg_delete = 5
+let g:signify_sign_color_ctermbg        = 4
+"let g:signify_sign_color_group_add      = 'DiffAdd'
+"let g:signify_sign_color_group_delete   = 'DiffDelete'
+"let g:signify_sign_color_group_change   = 'DiffChange'
+let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " =============== General Configuration =================
 
