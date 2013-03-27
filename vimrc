@@ -36,19 +36,21 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " =============== General Configuration =================
 
+set noshowmode                  "Don't show current mode down the bottom
 set laststatus=2                "Always show the statusline
+set modeline
 
-set number                      "Line numbers are good
+set number                      "Line numbers
+set rnu                         "Relative numbers
+
+set showcmd                     "Show incomplete cmds down the bottom
+set smarttab
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
-set showcmd                     "Show incomplete cmds down the bottom
-set noshowmode                  "Don't show current mode down the bottom
+set autoread                    "Reload files changed outside vim
 set novisualbell                "No sounds, no visuals
 set noerrorbells                "Do not bell on on errors
-set autoread                    "Reload files changed outside vim
-set hidden
-set smarttab
-set modeline
+set nohidden
 
 " =============== Syntax and Colors Configuration =======
 
