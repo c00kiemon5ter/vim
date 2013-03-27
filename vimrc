@@ -194,21 +194,22 @@ autocmd FileType c,cpp set formatoptions+=ro
 autocmd FileType c,cpp :ab #d #define
 autocmd FileType c,cpp :ab #i #include
 
-" Compile and run keymappings
-autocmd FileType c,cpp map <F5> :!./%:r<CR>
-autocmd FileType c,cpp map <F6> :make %:r<CR>
-autocmd FileType sh,php,perl,python map <F5> :!./%<CR>
-autocmd FileType python map <F6> :!python %<CR>
-autocmd FileType perl map <F6> :!perl %<CR>
-autocmd FileType php map <F6> :!php &<CR>
-autocmd FileType java map <F6> :!javac %<CR>
-autocmd FileType html,xhtml map <F5> :!chromium%<CR>
-autocmd FileType tex map <F5> :!evince "%:r".pdf<CR>
-autocmd FileType tex map <F6> :!pdflatex %<CR>
+" Compile and run keymappings -- F3 run :: F4 build
+autocmd FileType c,cpp map <F3> :!./%:r<CR>
+autocmd FileType c,cpp map <F4> :make %:r<CR>
+" --
+autocmd FileType sh,php,perl,python map <F3> :!./%<CR>
+autocmd FileType python map <F4> :!python %<CR>
+autocmd FileType perl map <F4> :!perl %<CR>
+autocmd FileType php map <F4> :!php %<CR>
+autocmd FileType java map <F4> :!javac %<CR>
+" --
+autocmd FileType tex map <F3> :!evince "%:r".pdf<CR>
+autocmd FileType tex map <F4> :!pdflatex %<CR>
+autocmd FileType html,xhtml map <F3> :!chromium %<CR>
 
 " autocomplete python functions for python file types
 autocmd FileType python set completefunc=pythoncomplete#Complete
-
 " Arduino stuff
 autocmd BufReadPre *.pde set filetype=c
 " nasm
@@ -269,29 +270,32 @@ set completeopt=menu,menuone,longest
 set pumheight=15
 "set showfulltag "Show full tags when doing search completion
 
-" Easy access help
-map! <F1> <C-C><F1>
-vmap <F1> <C-C><F1>
-omap <F1> <C-C><F1>
-nnoremap <F1> :help<Space>
+" Toggle spell check
+map  <F1> :set spell!<CR>
 
 " Toggle nonprinting characters
 map <F2> :set list!<CR>
-inoremap <F2> <ESC>:set list!<CR>a
+inoremap <F2> <ESC>:set list!<CR>
 
-" Toggle between windows
-nnoremap <F3> <C-W>W
-nnoremap <F4> <C-W>w
+" Fold column
+nmap <F5> :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
+inoremap <F5> :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
 
-" Quickfixsigns tagbar
-nmap <F7> :QuickfixsignsToggle<CR>
-let g:quickfixsigns_classes=['qfl', 'vcsdiff', 'breakpoints']
+" Sign column
+nmap <F6> :SignifyToggle<CR>
+inoremap <F6> <ESC>:SignifyToggle<CR>
+
+" Toggle relative numbers
+map  <F7> :set rnu!<CR>
+inoremap <F7> <ESC>:set rnu!<CR>
 
 " Toggle line numbers
 map <F8> :set number!<CR>
+inoremap <F8> <ESC>:set number!<CR>
 
 " Toggle tagbar
-nmap <F9> :TagbarToggle<CR>
+map <F9> :TagbarToggle<CR>
+inoremap <F9> <ESC>:TagbarToggle<CR>
 
 " Toggle paste mode while in insert mode with F10
 set pastetoggle=<F10>
