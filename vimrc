@@ -78,6 +78,7 @@ let &showbreak = '+++ ' "Wrapped lines are marked with
 
 "set list listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 set list listchars=tab:¬\ ,trail:•,extends:>,precedes:<
+"let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 
 " =============== Completion Configuration ==============
 
