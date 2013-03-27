@@ -71,7 +71,7 @@ set softtabstop=4
 set tabstop=4
 set noexpandtab
 
-set textwidth=100       "Maximum width of inserted text
+set textwidth=120       "Maximum width of inserted text
 set nowrap              "Don't wrap lines
 set linebreak           "Wrap lines at convenient points
 let &showbreak = '+++ ' "Wrapped lines are marked with
