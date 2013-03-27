@@ -44,7 +44,6 @@ syntax on
 set synmaxcol=140
 set cursorline
 
-set t_Co=16
 colorscheme solarcookies
 
 " draw foreground or background after 120 chars
