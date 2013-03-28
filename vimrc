@@ -249,6 +249,13 @@ cmap w!! %!sudo tee > /dev/null %
 " :W is :w ffs!
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
+" have Q reformat the current paragraph (or selected text if there is any):
+nnoremap Q gqap
+vnoremap Q gq
+
+" have Y behave like to D and C
+noremap Y y$
+
 " no arrows!
 nnoremap <up>    <nop>
 nnoremap <down>  <nop>
