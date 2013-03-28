@@ -36,6 +36,7 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " =============== General Configuration =================
 
+set showcmd                     "Show incomplete cmds down the bottom
 set noshowmode                  "Don't show current mode down the bottom
 set laststatus=2                "Always show the statusline
 set modeline
@@ -43,7 +44,6 @@ set modeline
 set number                      "Line numbers
 set rnu                         "Relative numbers
 
-set showcmd                     "Show incomplete cmds down the bottom
 set smarttab
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
@@ -86,6 +86,7 @@ set tabstop=4
 set noexpandtab
 
 set textwidth=120       "Maximum width of inserted text
+set whichwrap=          "Wrap cursor to next/prev line. not!
 set nowrap              "Don't wrap lines
 set linebreak           "Wrap lines at convenient points
 let &showbreak = '+++ ' "Wrapped lines are marked with
@@ -93,6 +94,7 @@ let &showbreak = '+++ ' "Wrapped lines are marked with
 "set list listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 set list listchars=tab:¬\ ,trail:•,extends:>,precedes:<
 "let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+set matchpairs+=<:>
 
 " =============== Completion Configuration ==============
 
@@ -175,18 +177,18 @@ endfun
 " turn off any existing search on exit
 autocmd VimEnter * nohlsearch
 
+"Clean trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " When editing a file, always jump to the last known cursor
 " position. Don't do it when the position is invalid or when
 " inside an event handler (happens when dropping a file on gvim).
 " Also don't do it when the mark is in the first line, that is
 " the default position when opening a file.
 autocmd BufReadPost *
-			\ if line("'\"") > 1 && line("'\"") <= line("$") |
-			\   exe "normal! g`\"" |
-			\ endif
-
-"Clean trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+		\ if line("'\"") > 1 && line("'\"") <= line("$") |
+		\   exe "normal! g`\"" |
+		\ endif
 
 " C file specific options
 autocmd FileType c,cpp set cindent
