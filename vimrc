@@ -1,4 +1,5 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License, ..omnomnom
+" Last Update: Fri Mar 29, 2013 18:48 EET
 
 " This
 " is
@@ -158,15 +159,18 @@ set writebackup
 
 " =============== Functions =============================
 
-"" Set up the status line
-"fun! <SID>SetStatusLine()
-"    let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
-"    let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
-"    let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
-"    execute "set statusline=" . l:s1 . l:s2 . l:s3
-"endfun
-"" and use it
-"call <SID>SetStatusLine()
+" If the buffer is modified, update any 'Last Update:' string in the first 20 lines.
+" 'Last Update:' can have up to 20 characters before and whitespace after it, they are
+" both retained. Restores cursor and window position:
+function! LastUpdated()
+	if &modified
+		let save_cursor = getpos(".")
+		let n = min([20, line("$")])  "look into the first 20 lines
+		exe '1,' . n . 's#^\(.\{,20}Last[ ]\?Updated\?:[[:blank:]]*\).*#\1' . strftime('%a %b %d, %Y %R %Z') . '#e'
+		call setpos('.', save_cursor)
+	endif
+endfun
+autocmd BufWritePre * call LastUpdated()
 
 " Copy/Paste from Word*doc files is a mess
 fun! FixInvisiblePunctuation()
