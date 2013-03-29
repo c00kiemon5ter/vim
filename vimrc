@@ -225,6 +225,23 @@ autocmd BufReadPost *.doc %!antiword "%"
 
 " =============== Keymap Configuration ==================
 
+" Basic abbreviations - TODO needs work
+iabbrev lorem Loremipsumdolorsitamet,consecteturadipisicingelit,seddoeiusmod
+		\temporincididuntutlaboreetdoloremagnaaliqua.Utenimadminimveniam,quisnostrud
+		\exercitationullamcolaborisnisiutaliquipexeacommodoconsequat.Duisauteiruredo
+		\lorinreprehenderitinvoluptatevelitessecillumdoloreeufugiatnullapariatur.Exc
+		\epteursintoccaecatcupidatatnonproident,suntinculpaquiofficiadeseruntmollita
+		\nimidestlaborum.
+abbreviate teh     the
+abbreviate abord   abort
+abbreviate spolier spoiler
+abbreviate atmoic  atomic
+abbreviate magic   ¡magic!
+iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
+" C file abbreviations
+autocmd FileType c,cpp :ab #d #define
+autocmd FileType c,cpp :ab #i #include
+
 " Leave insert mode without reaching for the esc key
 imap jj <ESC>
 
@@ -253,10 +270,6 @@ inoremap <up>    <nop>
 inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
-
-" Basic abbreviations - TODO needs work
-abbreviate teh the
-iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
 
 " Omni-completion with Ctrl-Space - hell yeah
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
