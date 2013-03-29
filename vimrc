@@ -112,6 +112,18 @@ set wildignore+=*.png,*.jpg,*.gif
 
 set dictionary=/usr/share/dict/words
 
+" Omni-completion with Ctrl-Space - hell yeah
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+		\ "\<lt>C-n>" :
+		\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+		\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+		\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menu,menuone
+set showfulltag "Show full tags when doing search completion
+set pumheight=15
+
 " =============== Encoding and Spell Checking ===========
 
 set encoding=utf-8
@@ -271,16 +283,6 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
-" Omni-completion with Ctrl-Space - hell yeah
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-			\ "\<lt>C-n>" :
-			\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-			\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-			\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-set completeopt=menu,menuone,longest
-set pumheight=15
-"set showfulltag "Show full tags when doing search completion
 
 " Toggle spell check
 map  <F1> :set spell!<CR>
