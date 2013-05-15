@@ -1,5 +1,5 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License, ..omnomnom
-" Last Update: Fri Mar 29, 2013 18:48 EET
+" Last Update: Wed May 15, 2013 15:19 EEST
 
 " This
 " is
@@ -23,16 +23,14 @@ Bundle 'tomasr/molokai'
 Bundle 'zeis/vim-kolor'
 
 let g:signify_sign_add                  = '+'
-let g:signify_sign_change               = '!'
 let g:signify_sign_delete               = '_'
 let g:signify_sign_delete_first_line    = '‾'
+let g:signify_sign_change               = '!'
+let g:signify_sign_change_delete        = '!_'
 let g:signify_sign_color_ctermfg_add    = 6
 let g:signify_sign_color_ctermfg_change = 1
 let g:signify_sign_color_ctermfg_delete = 5
 let g:signify_sign_color_ctermbg        = 4
-"let g:signify_sign_color_group_add      = 'DiffAdd'
-"let g:signify_sign_color_group_delete   = 'DiffDelete'
-"let g:signify_sign_color_group_change   = 'DiffChange'
 let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " =============== General Configuration =================
