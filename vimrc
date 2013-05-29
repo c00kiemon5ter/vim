@@ -1,5 +1,5 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License, ..omnomnom
-" Last Update: Wed May 15, 2013 15:19 EEST
+" Last Update: Thu May 30, 2013 01:30 EEST
 
 " This
 " is
@@ -21,7 +21,6 @@ Bundle 'mhinz/vim-blockify'
 Bundle 'othree/html5.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
-Bundle 'zeis/vim-kolor'
 
 let g:signify_sign_add                  = '+'
 let g:signify_sign_delete               = '_'
