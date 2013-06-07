@@ -5,14 +5,13 @@
 "
 
 hi clear
-set t_Co=16
 set background=dark
 
 if exists("syntax on")
 	syntax reset
 endif
 
-let g:color_name="c00kiez"
+let g:colors_name="c00kiez"
 
 
 
