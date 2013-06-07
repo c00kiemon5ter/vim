@@ -2,5 +2,9 @@ spell/
 doc/
 autoload/
 bundle
-.*
 backups/
+ftdetect/
+ftplugin/
+plugin/
+syntax/
+.*
