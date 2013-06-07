@@ -60,7 +60,7 @@ syntax on
 set synmaxcol=140
 set cursorline
 
-colorscheme solarcookies
+colorscheme molokookies
 
 " draw foreground or background after 120 chars
 let &colorcolumn = join(range(121,350),",")
