@@ -298,7 +298,8 @@ inoremap <F2> <ESC>:set list!<CR>
 
 " Compile and run keymappings -- F3 run :: F4 build
 autocmd FileType c,cpp  map <F3> :!./%:r<CR>
-autocmd FileType c,cpp  map <F4> :make %:r<CR>
+autocmd FileType c      map <F4> :make CFLAGS="-Wall -Wextra -pedantic -std=c99" %:r<CR>
+autocmd FileType cpp    map <F4> :make %:r<CR>
 " --
 autocmd FileType sh,php,perl,python map <F3> :!./%<CR>
 autocmd FileType python map <F4> :!python %<CR>
