@@ -1,5 +1,5 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License, ..omnomnom
-" Last Update: Sat Jun 08, 2013 03:11 EEST
+" Last Update: Sat Jun 08, 2013 16:27 EEST
 
 " This
 " is
@@ -267,8 +267,12 @@ nnoremap <CR> :noh<CR>/<BS>
 " Allows writing to files with root privileges
 cmap w!! %!sudo tee > /dev/null %
 
-" :W is :w ffs!
+" :W is :w  --  :Q is :q   ffs!
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
+
+" two column connected layout
+nmap <silent> <Leader>ef :vsplit<bar>wincmd l<bar>exe "norm! Ljz<c-v><cr>"<cr>:set scb<cr>:wincmd h<cr> :set scb<cr>
 
 " have Q reformat the current paragraph (or selected text if there is any):
 nnoremap Q gqap
