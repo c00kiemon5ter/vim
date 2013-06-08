@@ -54,7 +54,7 @@ hi SpecialKey        cterm=none          ctermfg=6            ctermbg=none
 hi TabLine           cterm=none          ctermfg=none         ctermbg=4
 hi TabLineFill       cterm=none          ctermfg=none         ctermbg=4
 hi TabLineSel        cterm=none          ctermfg=3            ctermbg=4
-hi Title             cterm=bold          ctermfg=5            ctermbg=4
+hi Title             cterm=none          ctermfg=2            ctermbg=none
 hi StatusLine        cterm=none          ctermfg=3            ctermbg=4
 hi StatusLineNC      cterm=none          ctermfg=none         ctermbg=4
 hi WildMenu          cterm=none          ctermfg=none         ctermbg=5
@@ -85,7 +85,7 @@ high Character       cterm=bold       ctermfg=1
 " high Float           cterm=none       ctermfg=3
 
 hi Identifier        cterm=none       ctermfg=6
-high Function        cterm=bold       ctermfg=3
+high Function        cterm=none       ctermfg=3
 
 hi Statement         cterm=bold       ctermfg=5
 " high Conditional     cterm=none       ctermfg=2
@@ -110,8 +110,8 @@ hi Special           cterm=bold       ctermfg=1
 " high Tag             cterm=bold       ctermfg=1
 " high SpecialChar     cterm=bold       ctermfg=1
 " high SpecialComment  cterm=bold       ctermfg=1
-high Delimiter       cterm=none       ctermfg=6
-high Debug           cterm=none       ctermfg=1
+" high Delimiter       cterm=none       ctermfg=1
+" high Debug           cterm=none       ctermfg=1
 
 hi Error             cterm=underline  ctermfg=1               ctermbg=none
 hi Comment           cterm=bold       ctermfg=DarkGray
