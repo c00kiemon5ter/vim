@@ -1,5 +1,5 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License, ..omnomnom
-" Last Update: Thu May 30, 2013 01:30 EEST
+" Last Update: Sat Jun 08, 2013 03:11 EEST
 
 " This
 " is
@@ -31,9 +31,8 @@ let g:signify_sign_delete_first_line    = '‾'
 let g:signify_sign_change               = '!'
 let g:signify_sign_change_delete        = '!_'
 let g:signify_sign_color_ctermfg_add    = 6
-let g:signify_sign_color_ctermfg_change = 1
-let g:signify_sign_color_ctermfg_delete = 5
-let g:signify_sign_color_ctermbg        = 4
+let g:signify_sign_color_ctermfg_change = 3
+let g:signify_sign_color_ctermfg_delete = 1
 let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " =============== General Configuration =================
