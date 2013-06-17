@@ -293,16 +293,14 @@ inoremap <left>  <nop>
 inoremap <right> <nop>
 
 " Toggle spell check
-map      <F1>      :set spell!<CR>
-inoremap <F1> <ESC>:set spell!<CR>
+nnoremap <F1> :set spell!<CR>
 
 " Toggle nonprinting characters
-map      <F2>      :set list!<CR>
-inoremap <F2> <ESC>:set list!<CR>
+nnoremap <F2> :set list!<CR>
 
 " Compile and run keymappings -- F3 run :: F4 build
 autocmd FileType c,cpp  map <F3> :!./%:r<CR>
-autocmd FileType c      map <F4> :make CFLAGS="-Wall -Wextra -pedantic -std=c99" %:r<CR>
+autocmd FileType c      map <F4> :make %:r CFLAGS="-Wall -Wextra -pedantic -std=c99"<CR>
 autocmd FileType cpp    map <F4> :make %:r<CR>
 " --
 autocmd FileType sh,php,perl,python map <F3> :!./%<CR>
@@ -316,24 +314,19 @@ autocmd FileType tex    map <F4> :!pdflatex %<CR>
 autocmd FileType html,xhtml map <F3> :!chromium %<CR>
 
 " Fold column
-nmap     <F5>      :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
-inoremap <F5> <ESC>:let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
+nnoremap <F5> :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
 
 " Sign column
-nmap     <F6>      :SignifyToggle<CR>
-inoremap <F6> <ESC>:SignifyToggle<CR>
+nnoremap <F6> :SignifyToggle<CR>
 
 " Toggle relative numbers
-map      <F7>      :set rnu!<CR>
-inoremap <F7> <ESC>:set rnu!<CR>
+nnoremap <F7> :set rnu!<CR>
 
 " Toggle line numbers
-map      <F8>      :set number!<CR>
-inoremap <F8> <ESC>:set number!<CR>
+nnoremap <F8> :set number!<CR>
 
 " Toggle tagbar
-map      <F9>      :TagbarToggle<CR>
-inoremap <F9> <ESC>:TagbarToggle<CR>
+nnoremap <F9> :TagbarToggle<CR>
 
 " Toggle paste mode while in insert mode with F10
 set pastetoggle=<F10>
