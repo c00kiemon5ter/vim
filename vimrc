@@ -1,5 +1,4 @@
 " c00kiemon5ter (ivan.kanak@gmail.com) ~ under c00kie License, ..omnomnom
-" Last Update: Sat Jun 08, 2013 16:27 EEST
 
 " This
 " is
