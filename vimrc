@@ -42,7 +42,7 @@ set laststatus=2                "Always show the statusline
 set modeline
 
 set number                      "Line numbers
-set rnu                         "Relative numbers
+set nornu                       "Relative numbers
 
 set smarttab
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -61,7 +61,8 @@ set cursorline
 colorscheme molokookies
 
 " draw foreground or background after 120 chars
-let &colorcolumn = join(range(121,350),",")
+"let &colorcolumn = join(range(121,350),",")
+let &colorcolumn = 121
 "hi OverLength cterm=none ctermbg=Black ctermfg=none
 "match OverLength /\%121v.\+/
 "match ErrorMsg '\%>120v.\+'
