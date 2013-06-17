@@ -23,6 +23,7 @@ Bundle 'tomasr/molokai'
 Bundle 'jacekd/vim-iawriter'
 Bundle 'chriskempson/tomorrow-theme'
 Bundle 'chriskempson/base16-vim'
+Bundle 'sjl/gundo.vim'
 
 let g:signify_sign_add                  = '+'
 let g:signify_sign_delete               = '_'
@@ -336,6 +337,10 @@ inoremap <F9> <ESC>:TagbarToggle<CR>
 
 " Toggle paste mode while in insert mode with F10
 set pastetoggle=<F10>
+
+" Toggle Gundo
+let g:gundo_preview_bottom = 1
+nnoremap <F11> :GundoToggle<CR>
 
 " Toggle dark/light default colour theme for shitty terms
 "map <F11> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
