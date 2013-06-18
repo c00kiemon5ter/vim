@@ -18,13 +18,19 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-blockify'
 Bundle 'othree/html5.vim'
+Bundle 'tpope/vim-markdown'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 Bundle 'jacekd/vim-iawriter'
 Bundle 'chriskempson/tomorrow-theme'
 Bundle 'chriskempson/base16-vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'Modeliner'
+Bundle 'godlygeek/tabular'
 
+" =============== Plugins Configuration =================
+
+" signify
 let g:signify_sign_add                  = '+'
 let g:signify_sign_delete               = '_'
 let g:signify_sign_delete_first_line    = '‾'
@@ -33,7 +39,17 @@ let g:signify_sign_change_delete        = '!_'
 let g:signify_sign_color_ctermfg_add    = 6
 let g:signify_sign_color_ctermfg_change = 3
 let g:signify_sign_color_ctermfg_delete = 1
-let g:signify_vcs_list = [ 'git', 'hg' ]
+let g:signify_vcs_list                  = [ 'git', 'hg' ]
+
+" gundo
+let g:gundo_preview_bottom   = 1
+
+" clang_complete
+let g:clang_snippets         = 1
+let g:clang_conceal_snippets = 1
+let g:clang_snippets_engine  = 'clang_complete' " The single one that works with clang_complete
+set conceallevel=2
+set concealcursor=vin
 
 " =============== General Configuration =================
 
@@ -152,13 +168,36 @@ set nofoldenable        "dont fold by default
 
 " =============== Swap Backup Undo Configuration ========
 
+" hopefully the fs journal will take care of these
+set noswapfile
+set swapsync=
+set nofsync
+
+set autowrite
+set autowriteall
+
 set undodir=~/.vim/backups
 set undofile
+
 set backupdir=~/.vim/backups
 set backup
 set writebackup
+set backupcopy=auto
 
 " =============== Functions =============================
+
+" Tabularize
+inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+	let p = '^\s*|\s.*\s|\s*$'
+	if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+		let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+		let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+		Tabularize/|/l1
+		normal! 0
+		call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+	endif
+endfunction
 
 " If the buffer is modified, update any 'Last Update:' string in the first 20 lines.
 " 'Last Update:' can have up to 20 characters before and whitespace after it, they are
