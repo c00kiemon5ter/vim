@@ -64,10 +64,18 @@ set nornu                       "Relative numbers
 set smarttab
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
+
 set autoread                    "Reload files changed outside vim
+set nohidden
+
 set novisualbell                "No sounds, no visuals
 set noerrorbells                "Do not bell on on errors
-set nohidden
+
+" Prefer opening splits down and right rather than up and left
+set splitbelow
+set splitright
+
+set ttyfast
 
 " =============== Syntax and Colors Configuration =======
 
