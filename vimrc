@@ -176,8 +176,8 @@ set nospell
 
 " =============== Scroll Configuration ==================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
+set scrolloff=8     " Start scrolling when we're 8 lines away from margin
+set sidescrolloff=5 " Start scrolling when we're 8 chars away from margin
 set sidescroll=1
 
 " =============== Fold Configuration ====================
