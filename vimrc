@@ -285,22 +285,14 @@ autocmd BufReadPost *.doc %!antiword "%"
 
 " =============== Keymap Configuration ==================
 
-" Basic abbreviations - TODO needs work
-iabbrev lorem Loremipsumdolorsitamet,consecteturadipisicingelit,seddoeiusmod
-		\temporincididuntutlaboreetdoloremagnaaliqua.Utenimadminimveniam,quisnostrud
-		\exercitationullamcolaborisnisiutaliquipexeacommodoconsequat.Duisauteiruredo
-		\lorinreprehenderitinvoluptatevelitessecillumdoloreeufugiatnullapariatur.Exc
-		\epteursintoccaecatcupidatatnonproident,suntinculpaquiofficiadeseruntmollita
-		\nimidestlaborum.
-abbreviate teh     the
-abbreviate abord   abort
-abbreviate spolier spoiler
-abbreviate atmoic  atomic
-abbreviate magic   ¡magic!
-iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
-" C file abbreviations
-autocmd FileType c,cpp :ab #d #define
-autocmd FileType c,cpp :ab #i #include
+let mapleader      = ','
+let maplocalleader = mapleader
+
+" Tabularize
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t: :Tabularize /:\zs<CR>
+vmap <Leader>t: :Tabularize /:\zs<CR>
 
 " Leave insert mode without reaching for the esc key
 imap jj <ESC>
@@ -335,11 +327,30 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
+" Easy buffer navigation
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+
+" Basic abbreviations - TODO needs work
+abbreviate teh     the
+abbreviate abord   abort
+abbreviate spolier spoiler
+abbreviate atmoic  atomic
+iab DATE <C-R>=strftime("%B %d, %Y (%A, %H:%Mh)")<CR>
+
+" C file abbreviations
+autocmd FileType c,cpp :ab #d #define
+autocmd FileType c,cpp :ab #i #include
+
 " Toggle spell check
 nnoremap <F1> :set spell!<CR>
+map <leader>s :set spell!<cr>
 
 " Toggle nonprinting characters
 nnoremap <F2> :set list!<CR>
+map <leader>l :set list!<cr>
 
 " Compile and run keymappings -- F3 run :: F4 build
 autocmd FileType c,cpp  map <F3> :!./%:r<CR>
@@ -358,26 +369,29 @@ autocmd FileType html,xhtml map <F3> :!chromium %<CR>
 
 " Fold column
 nnoremap <F5> :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
+map <leader>f :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
 
 " Sign column
 nnoremap <F6> :SignifyToggle<CR>
+map <leader>d :SignifyToggle<cr>
 
 " Toggle relative numbers
 nnoremap <F7> :set rnu!<CR>
+map <leader>r :set rnu!<cr>
 
 " Toggle line numbers
 nnoremap <F8> :set number!<CR>
+map <leader>n :set number!<cr>
 
 " Toggle tagbar
 nnoremap <F9> :TagbarToggle<CR>
+map <leader>t :TagbarToggle<CR>
 
 " Toggle paste mode while in insert mode with F10
-set pastetoggle=<F10>
+"set pastetoggle=<F10>
+set pastetoggle=<leader>P
 
 " Toggle Gundo
-let g:gundo_preview_bottom = 1
 nnoremap <F11> :GundoToggle<CR>
-
-" Toggle dark/light default colour theme for shitty terms
-"map <F11> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
+map <leader>g  :GundoToggle<CR>
 
