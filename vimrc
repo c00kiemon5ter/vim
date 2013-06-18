@@ -121,11 +121,14 @@ set whichwrap=          "Wrap cursor to next/prev line. not!
 set nowrap              "Don't wrap lines
 set linebreak           "Wrap lines at convenient points
 let &showbreak = '+++ ' "Wrapped lines are marked with
-
-"set list listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
-set list listchars=tab:¬\ ,trail:•,extends:>,precedes:<
-"let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+set list
+set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 set matchpairs+=<:>
+
+if &encoding == 'utf-8'
+	set listchars=tab:¬\ ,trail:•,extends:❯,precedes:❮
+	set showbreak=↪
+endif
 
 " =============== Completion Configuration ==============
 
