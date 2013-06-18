@@ -130,17 +130,22 @@ set wildignore+=*.png,*.jpg,*.gif
 
 set dictionary=/usr/share/dict/words
 
-" Omni-completion with Ctrl-Space - hell yeah
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-		\ "\<lt>C-n>" :
-		\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-		\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-		\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
+" popup menu completion
+set pumheight=15               "Limit popup menu height
+set completeopt=menu,menuone   "Disable preview scratch window, longest removed to aways show menu
+
+" omni-complete
 set omnifunc=syntaxcomplete#Complete
-set completeopt=menu,menuone
 set showfulltag "Show full tags when doing search completion
-set pumheight=15
+
+" use Ctrl-Space for completion
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ? '<C-n>' :
+	\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>C-n>" : ""<CR>'
+imap <C-@> <C-Space>
+
+" use tab to scroll through autocomplete menus
+inoremap <expr>   <tab> pumvisible() ? "\<c-n>" :   "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " =============== Encoding and Spell Checking ===========
 
