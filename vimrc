@@ -155,7 +155,7 @@ set showfulltag "Show full tags when doing search completion
 
 " use Ctrl-Space for completion
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ? '<C-n>' :
-	\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>C-n>" : ""<CR>'
+	\ '<C-x><C-o><C-p><c-r>=pumvisible() ? "\<lt>C-n>" : ""<CR>'
 imap <C-@> <C-Space>
 
 " use tab to scroll through autocomplete menus
@@ -272,6 +272,8 @@ autocmd FileType c,cpp set cindent formatoptions+=ro foldmethod=syntax
 autocmd FileType gitcommit set textwidth=72
 " Python
 autocmd FileType python    set completefunc=pythoncomplete#Complete foldmethod=indent
+" Java
+autocmd Filetype java      set completefunc=javacomplete#Complete
 " Arduino stuff
 autocmd BufReadPre *.pde   set filetype=c
 " nasm
