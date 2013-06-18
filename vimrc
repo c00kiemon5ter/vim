@@ -116,17 +116,16 @@ set matchpairs+=<:>
 
 " =============== Completion Configuration ==============
 
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
+set wildmenu                      " enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore+=*vim/backups*     " stuff to ignore when tab completing
+set wildignore+=.hg,.git,.svn                         " Version control
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg        " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest      " compiled object files
+set wildignore+=*.DS_Store                            " OSX metadata
+set wildignore+=*.luac                                " Lua byte code
+set wildignore+=*.pyc,*.pyo                           " Python byte code
+set wildignore+=vendor/rails/**,vendor/cache/**,*.gem " Ruby files
+set wildignore+=log/**,tmp/**                         " Logs
 
 set dictionary=/usr/share/dict/words
 
