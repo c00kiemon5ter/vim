@@ -85,9 +85,13 @@ set cursorline
 
 colorscheme molokookies
 
-" draw foreground or background after 120 chars
+set colorcolumn=+1 " next column after textwidth
+"let &colorcolumn = 121
 "let &colorcolumn = join(range(121,350),",")
-let &colorcolumn = 121
+" show only on insert
+"au InsertEnter * set colorcolumn=+1
+"au InsertLeave * set colorcolumn=""
+
 "hi OverLength cterm=none ctermbg=Black ctermfg=none
 "match OverLength /\%121v.\+/
 "match ErrorMsg '\%>120v.\+'
