@@ -27,7 +27,7 @@ endif
 hi ColorColumn       cterm=none          ctermfg=none         ctermbg=0
 hi CursorColumn      cterm=none          ctermfg=none         ctermbg=0
 hi CursorLine        cterm=none          ctermfg=none         ctermbg=0
-hi CursorLineNr      cterm=none          ctermfg=0            ctermbg=3
+hi CursorLineNr      cterm=none          ctermfg=3            ctermbg=0
 hi SignColumn        cterm=none          ctermfg=none         ctermbg=0
 hi LineNr            cterm=none          ctermfg=none         ctermbg=0
 hi DiffAdd           cterm=none          ctermfg=7            ctermbg=4
@@ -41,7 +41,7 @@ hi Folded            cterm=none          ctermfg=3            ctermbg=0
 hi FoldColumn        cterm=none          ctermfg=3            ctermbg=0
 hi IncSearch         cterm=none          ctermfg=7            ctermbg=3
 hi Search            cterm=none          ctermfg=0            ctermbg=3
-hi MatchParen        cterm=none          ctermfg=0            ctermbg=3
+hi MatchParen        cterm=none          ctermfg=7            ctermbg=6
 hi ModeMsg           cterm=none          ctermfg=3            ctermbg=none
 hi MoreMsg           cterm=none          ctermfg=3            ctermbg=none
 hi NonText           cterm=none          ctermfg=6            ctermbg=none
@@ -60,7 +60,7 @@ hi StatusLineNC      cterm=none          ctermfg=none         ctermbg=4
 hi WildMenu          cterm=none          ctermfg=none         ctermbg=5
 hi Visual            cterm=none          ctermfg=7            ctermbg=1
 hi VisualNOS         cterm=none          ctermfg=7            ctermbg=5
-hi WarningMsg        cterm=bold          ctermfg=0            ctermbg=3
+hi WarningMsg        cterm=bold          ctermfg=none         ctermbg=1
 
 if has("spell")
 	hi clear SpellBad
