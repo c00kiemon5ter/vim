@@ -386,6 +386,8 @@ autocmd FileType java   map <F4> :!javac %<CR>
 autocmd FileType tex    map <F3> :!evince "%:r".pdf<CR>
 autocmd FileType tex    map <F4> :!pdflatex %<CR>
 autocmd FileType html,xhtml map <F3> :!chromium %<CR>
+autocmd FileType xquery map <F3> :!zorba -i -f -q %\|less<CR>
+autocmd FileType xquery map <F4> :!xqilla %<CR>
 
 " Fold column
 nnoremap <F5> :let &foldcolumn = (&foldcolumn == 0 ? 1 : 0)<CR>
