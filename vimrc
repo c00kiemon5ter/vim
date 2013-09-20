@@ -27,6 +27,7 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'Modeliner'
 Bundle 'godlygeek/tabular'
+Bundle 'sudar/vim-arduino-syntax'
 
 " =============== Plugins Configuration =================
 
@@ -274,8 +275,6 @@ autocmd FileType gitcommit set textwidth=72
 autocmd FileType python    set completefunc=pythoncomplete#Complete foldmethod=indent
 " Java
 autocmd Filetype java      set completefunc=javacomplete#Complete
-" Arduino stuff
-autocmd BufReadPre *.pde   set filetype=c
 " nasm
 autocmd BufReadPre *.nasm  set filetype=asm
 " SVG
@@ -374,6 +373,9 @@ map <leader>l :set list!<cr>
 autocmd FileType c,cpp  map <F3> :!./%:r<CR>
 autocmd FileType c      map <F4> :make %:r CFLAGS="-Wall -Wextra -pedantic -std=c99"<CR>
 autocmd FileType cpp    map <F4> :make %:r<CR>
+" --
+autocmd FileType arduino map <F3> :!ino build && ino upload<CR>
+autocmd FileType arduino map <F4> :!ino build<CR>
 " --
 autocmd FileType sh,php,perl,python map <F3> :!./%<CR>
 autocmd FileType python map <F4> :!python %<CR>
