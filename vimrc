@@ -283,7 +283,7 @@ autocmd BufReadPre *.svg   set filetype=svg
 " Ragel
 autocmd BufRead,BufNewFile *.rl set filetype=ragel
 " HTML and CSS
-autocmd FileType html set formatoptions+=tl
+autocmd FileType xhtml,html set formatoptions+=tl inde=
 autocmd FileType css  set smartindent
 let g:html_use_css = 1
 " Factor
