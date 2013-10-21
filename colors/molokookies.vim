@@ -119,6 +119,6 @@ if &t_Co > 16
 	hi Comment           cterm=bold       ctermfg=59
 endif
 hi Ignore            cterm=none       ctermfg=0
-hi Underlined        cterm=reverse    ctermfg=3               ctermbg=none
+hi Underlined        cterm=underline  ctermfg=3               ctermbg=none
 hi Todo              cterm=none       ctermfg=5               ctermbg=3
 
