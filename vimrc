@@ -194,8 +194,9 @@ set noswapfile
 set swapsync=
 set nofsync
 
-set autowrite
-set autowriteall
+" do not save on quit/next/prev without a :w
+set noautowrite
+set noautowriteall
 
 set undodir=~/.vim/backups
 set undofile
