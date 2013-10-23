@@ -190,7 +190,11 @@ set nofoldenable        "dont fold by default
 " =============== Swap Backup Undo Configuration ========
 
 " hopefully the fs journal will take care of these
-set noswapfile
+"set noswapfile
+"set swapsync=
+"set nofsync
+" FAK JOURNAL! IT DOES NOT WORK!
+set swapfile
 set swapsync=
 set nofsync
 
