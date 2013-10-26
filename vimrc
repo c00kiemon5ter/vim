@@ -47,9 +47,15 @@ let g:signify_vcs_list                  = [ 'git', 'hg' ]
 let g:gundo_preview_bottom   = 1
 
 " clang_complete
+let g:clang_library_path     = '/usr/lib/llvm-3.2/lib/'
+let g:clang_complete_auto    = 1
+let g:clang_complete_copen   = 1
+let g:clang_user_options     = '|| exit 0'
+
+" clang_complete snippets
 let g:clang_snippets         = 1
-let g:clang_conceal_snippets = 1
 let g:clang_snippets_engine  = 'clang_complete' " The single one that works with clang_complete
+let g:clang_conceal_snippets = 1
 set conceallevel=2
 set concealcursor=vin
 
