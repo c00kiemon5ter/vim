@@ -28,6 +28,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'Modeliner'
 Bundle 'godlygeek/tabular'
 Bundle 'sudar/vim-arduino-syntax'
+Bundle 'msanders/snipmate.vim'
 
 " =============== Plugins Configuration =================
 
