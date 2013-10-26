@@ -161,14 +161,13 @@ set completeopt=menu,menuone   "Disable preview scratch window, longest removed 
 set omnifunc=syntaxcomplete#Complete
 set showfulltag "Show full tags when doing search completion
 
-" use Ctrl-Space for completion
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ? '<C-n>' :
-	\ '<C-x><C-o><C-p><c-r>=pumvisible() ? "\<lt>C-n>" : ""<CR>'
-imap <C-@> <C-Space>
+" use of Ctrl-Space for completion
+inoremap <expr> <Nul>     pumvisible() ? "\<C-n>" : "\<C-x>\<C-o>\<C-r>\<CR>"
+inoremap <expr> <C-Space> pumvisible() ? "\<C-n>" : "\<C-x>\<C-o>\<C-r>\<CR>"
 
 " use tab to scroll through autocomplete menus
-inoremap <expr>   <tab> pumvisible() ? "\<c-n>" :   "\<tab>"
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <expr>   <Tab> pumvisible() ? "\<C-n>" :   "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " =============== Encoding and Spell Checking ===========
 
