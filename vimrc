@@ -201,8 +201,6 @@ set nofoldenable        "dont fold by default
 "set nofsync
 " FAK JOURNAL! IT DOES NOT WORK!
 set swapfile
-set swapsync=
-set nofsync
 
 " do not save on quit/next/prev without a :w
 set noautowrite
