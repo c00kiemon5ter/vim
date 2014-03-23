@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
-Bundle 'Rip-Rip/clang_complete'
+"Bundle 'Rip-Rip/clang_complete'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-blockify'
 Bundle 'othree/html5.vim'
@@ -29,8 +29,14 @@ Bundle 'Modeliner'
 Bundle 'godlygeek/tabular'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle 'msanders/snipmate.vim'
+Bundle 'kchmck/vim-coffee-script'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'bling/vim-airline'
 
 " =============== Plugins Configuration =================
+
+" ctrlp
+let g:ctrlp_map = '<c-o>'
 
 " signify
 let g:signify_sign_add                  = '+'
@@ -47,17 +53,17 @@ let g:signify_vcs_list                  = [ 'git', 'hg' ]
 let g:gundo_preview_bottom   = 1
 
 " clang_complete
-let g:clang_library_path     = '/usr/lib/llvm-3.2/lib/'
-let g:clang_complete_auto    = 1
-let g:clang_complete_copen   = 1
-let g:clang_user_options     = '|| exit 0'
+"let g:clang_library_path     = '/usr/lib/llvm-3.2/lib/'
+"let g:clang_complete_auto    = 1
+"let g:clang_complete_copen   = 1
+"let g:clang_user_options     = '|| exit 0'
 
 " clang_complete snippets
-let g:clang_snippets         = 1
-let g:clang_snippets_engine  = 'clang_complete' " The single one that works with clang_complete
-let g:clang_conceal_snippets = 1
-set conceallevel=2
-set concealcursor=vin
+"let g:clang_snippets         = 1
+"let g:clang_snippets_engine  = 'clang_complete' " The single one that works with clang_complete
+"let g:clang_conceal_snippets = 1
+"set conceallevel=2
+"set concealcursor=vin
 
 " =============== General Configuration =================
 
@@ -178,7 +184,7 @@ scriptencoding utf-8
 set langmap+=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ
 set langmap+=αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
 
-set spell spelllang=en,el
+set spell spelllang=en
 set nospell
 
 " =============== Scroll Configuration ==================
@@ -322,6 +328,7 @@ vmap <Leader>t: :Tabularize /:\zs<CR>
 
 " Leave insert mode without reaching for the esc key
 imap jj <ESC>
+imap ξξ <ESC>
 
 " turn off highlighting for a searched term once you hit return
 nnoremap <CR> :noh<CR>/<BS>
@@ -380,7 +387,7 @@ map <leader>l :set list!<cr>
 
 " Compile and run keymappings -- F3 run :: F4 build
 autocmd FileType c,cpp  map <F3> :!./%:r<CR>
-autocmd FileType c      map <F4> :make %:r CFLAGS="-Wall -Wextra -pedantic -std=c99"<CR>
+autocmd FileType c      map <F4> :!clear; make CFLAGS="-Wall -Wextra -pedantic -std=c99" CC=clang %:r 2>&1 \|less<CR>
 autocmd FileType cpp    map <F4> :make %:r<CR>
 " --
 autocmd FileType arduino map <F3> :!ino build && ino upload<CR>
@@ -423,6 +430,6 @@ map <leader>t :TagbarToggle<CR>
 set pastetoggle=<leader>P
 
 " Toggle Gundo
-nnoremap <F11> :GundoToggle<CR>
+"nnoremap <F11> :GundoToggle<CR>
 map <leader>g  :GundoToggle<CR>
 
