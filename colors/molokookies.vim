@@ -19,14 +19,14 @@ let g:colors_name="c00kiez"
 
 hi Normal            cterm=none          ctermfg=none         ctermbg=none
 if &t_Co > 16
-	hi Normal            cterm=none          ctermfg=none         ctermbg=233
+	hi Normal        cterm=none          ctermfg=none         ctermbg=235
 endif
 " Conceal
 " Cursor
 " CursorIM
 hi ColorColumn       cterm=none          ctermfg=none         ctermbg=0
 hi CursorColumn      cterm=none          ctermfg=none         ctermbg=0
-hi CursorLine        cterm=none          ctermfg=none         ctermbg=0
+hi CursorLine        cterm=none          ctermfg=none         ctermbg=236
 hi CursorLineNr      cterm=none          ctermfg=3            ctermbg=0
 hi SignColumn        cterm=none          ctermfg=none         ctermbg=0
 hi LineNr            cterm=none          ctermfg=none         ctermbg=0
