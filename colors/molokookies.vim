@@ -96,7 +96,7 @@ high Exception       cterm=bold       ctermfg=1
 " high Keyword         cterm=bold       ctermfg=3
 
 hi PreProc           cterm=none       ctermfg=2
-high Macro           cterm=bold       ctermfg=0
+high Macro           cterm=bold       ctermfg=6
 " high Include         cterm=bold       ctermfg=0
 " high Define          cterm=none       ctermfg=6
 " high PreCondit       cterm=bold       ctermfg=6
