@@ -7,34 +7,49 @@ set nocompatible
 
 " =============== [VB]undle Configuration ===============
 
+filetype on
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'majutsushi/tagbar'
-"Bundle 'Rip-Rip/clang_complete'
+
+" visuals
+"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'bling/vim-airline'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-blockify'
+
+" productivity
+Bundle 'majutsushi/tagbar'
+Bundle 'sjl/gundo.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Modeliner'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Valloric/YouCompleteMe'
+
+" syntax
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-markdown'
+Bundle 'sudar/vim-arduino-syntax'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'msanders/cocoa.vim'
+
+" colorscheme
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 Bundle 'sickill/vim-monokai'
 Bundle 'jacekd/vim-iawriter'
 Bundle 'chriskempson/tomorrow-theme'
 Bundle 'chriskempson/base16-vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'Modeliner'
-Bundle 'godlygeek/tabular'
-Bundle 'sudar/vim-arduino-syntax'
-Bundle 'msanders/snipmate.vim'
-Bundle 'kchmck/vim-coffee-script'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'bling/vim-airline'
 
 " =============== Plugins Configuration =================
+
+" airline └┐
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 0
 
 " ctrlp
 let g:ctrlp_map = '<c-o>'
@@ -52,19 +67,6 @@ let g:signify_vcs_list                  = [ 'git', 'hg' ]
 
 " gundo
 let g:gundo_preview_bottom   = 1
-
-" clang_complete
-"let g:clang_library_path     = '/usr/lib/llvm-3.2/lib/'
-"let g:clang_complete_auto    = 1
-"let g:clang_complete_copen   = 1
-"let g:clang_user_options     = '|| exit 0'
-
-" clang_complete snippets
-"let g:clang_snippets         = 1
-"let g:clang_snippets_engine  = 'clang_complete' " The single one that works with clang_complete
-"let g:clang_conceal_snippets = 1
-"set conceallevel=2
-"set concealcursor=vin
 
 " =============== General Configuration =================
 
@@ -283,24 +285,30 @@ autocmd BufReadPost *
 		\   exe "normal! g`\"" |
 		\ endif
 
+
 " C / C++
-autocmd FileType c,cpp set cindent formatoptions+=ro foldmethod=syntax
+autocmd FileType c,cpp     setl cindent formatoptions+=ro foldmethod=syntax ofu=ccomplete#CompleteCpp
 " GIT
-autocmd FileType gitcommit set textwidth=72
+autocmd FileType gitcommit setl textwidth=72
 " Python
-autocmd FileType python    set completefunc=pythoncomplete#Complete foldmethod=indent
+autocmd FileType python    setl completefunc=pythoncomplete#Complete foldmethod=indent
 " Java
-autocmd Filetype java      set completefunc=javacomplete#Complete
+autocmd Filetype java      setl completefunc=javacomplete#Complete
 " nasm
-autocmd BufReadPre *.nasm  set filetype=asm
+autocmd BufReadPre *.nasm  setl filetype=asm
 " SVG
-autocmd BufReadPre *.svg   set filetype=svg
+autocmd BufReadPre *.svg   setl filetype=svg
 " Ragel
-autocmd BufRead,BufNewFile *.rl set filetype=ragel
-" HTML and CSS
-autocmd FileType xhtml,html set formatoptions+=tl inde=
-autocmd FileType css  set smartindent
+autocmd BufRead,BufNewFile *.rl setl filetype=ragel
+" xml html xhtml
+autocmd FileType xhtml,html setl ofu=htmlcomplete#CompleteTags formatoptions+=tl inde=
 let g:html_use_css = 1
+" css
+autocmd FileType css        setl ofu=csscomplete#CompleteCSS smartindent
+" php
+autocmd FileType php        setl ofu=phpcomplete#CompletePHP
+" ruby
+autocmd FileType ruby,eruby setl ofu=rubycomplete#Complete
 " Factor
 let g:FactorRoot = '~/projects/factor'
 
